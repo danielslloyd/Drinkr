@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#d4943a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Drinkr">
+  <link rel="apple-touch-icon" href="/icons/icon.svg">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <title>Drinkr</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- Startup overlay: shown on every session open -->
+    <div id="startup-overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <div class="startup-logo">🍺</div>
+        <h2 id="startup-title">Did you have a beer today?</h2>
+
+        <!-- Initial yes/no buttons -->
+        <div id="startup-buttons" class="startup-actions">
+          <button id="btn-yes" class="btn btn-primary btn-full">Yes! 🍺</button>
+          <button id="btn-no" class="btn btn-ghost btn-full">Not today</button>
+        </div>
+
+        <!-- Catalog search (after "Yes") -->
+        <div id="startup-yes-flow" class="hidden"></div>
+
+        <!-- No options (after "Not today") -->
+        <div id="startup-no-options" class="hidden startup-actions">
+          <p class="startup-hint">What would you like to do?</p>
+          <button id="btn-log-past" class="btn btn-secondary btn-full">📅 Log a past beer</button>
+          <button id="btn-view-stats" class="btn btn-primary btn-full">📊 View my stats</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main app shell -->
+    <div id="main-app" class="hidden">
+      <main id="tab-content">
+        <div id="tab-log"      class="tab-pane"></div>
+        <div id="tab-journal"  class="tab-pane hidden"></div>
+        <div id="tab-stats"    class="tab-pane hidden"></div>
+        <div id="tab-settings" class="tab-pane hidden"></div>
+      </main>
+
+      <nav id="bottom-nav">
+        <button class="nav-btn active" data-tab="log">
+          <span class="nav-icon">➕</span>
+          <span class="nav-label">Log</span>
+        </button>
+        <button class="nav-btn" data-tab="journal">
+          <span class="nav-icon">📋</span>
+          <span class="nav-label">Journal</span>
+        </button>
+        <button class="nav-btn" data-tab="stats">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Stats</span>
+        </button>
+        <button class="nav-btn" data-tab="settings">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">Settings</span>
+        </button>
+      </nav>
+    </div>
+
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
